@@ -11,11 +11,8 @@
 			"item": [
 				{
 					"name": "register",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -48,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin@biblioteca.com\",\n    \"password\": \"Password123\"\n}",
+							"raw": "{\n    \"email\": \"javier.collao@example.com\",\n    \"password\": \"Segur123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,8 +70,30 @@
 				{
 					"name": "Me",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQ5NjEwNjcyLCJleHAiOjE3NDk2MTQyNzJ9.a7jqI1iwYRx2zR5lXNxOfN9aUFerVUKNECEneZinrdA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
 					},
 					"response": []
 				}
@@ -106,6 +125,16 @@
 				{
 					"name": "agregar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQ5NjEwNjcyLCJleHAiOjE3NDk2MTQyNzJ9.a7jqI1iwYRx2zR5lXNxOfN9aUFerVUKNECEneZinrdA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -192,6 +221,16 @@
 				{
 					"name": "Listar por usuario",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQ5NjEwNjcyLCJleHAiOjE3NDk2MTQyNzJ9.a7jqI1iwYRx2zR5lXNxOfN9aUFerVUKNECEneZinrdA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -214,6 +253,16 @@
 				{
 					"name": "Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ5NjAzNjMwLCJleHAiOjE3NDk2MDcyMzB9.Q5Sktxj5X3AzjFt_5m_Y9KMdaE_AQKftaLRJqgAwlBI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {

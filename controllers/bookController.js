@@ -1,7 +1,12 @@
 const sequelize = require('../models');
 const Book = require('../models/book')(sequelize);
+const { validationResult } = require('express-validator');
 
 exports.add = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const libro = await Book.create({ ...req.body });
   res.status(201).json(libro);
 };
@@ -22,6 +27,10 @@ exports.detail = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   await Book.update(req.body, { where: { id: req.params.id }});
   res.sendStatus(204);
 };

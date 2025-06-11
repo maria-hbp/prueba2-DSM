@@ -2,8 +2,13 @@ const sequelize = require('../models');
 const User = require('../models/user')(sequelize);
 const bcrypt = require('bcryptjs');
 const jwt    = require('jsonwebtoken');
+const { validationResult } = require('express-validator');
 
 exports.register = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const { nombre, apellido, email, password } = req.body;
   const hash = await bcrypt.hash(password, 10);
   const user = await User.create({ nombre, apellido, email, password: hash });
@@ -11,6 +16,10 @@ exports.register = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const { email, password } = req.body;
   const user = await User.findOne({ where: { email } });
   if (!user || !await bcrypt.compare(password, user.password))

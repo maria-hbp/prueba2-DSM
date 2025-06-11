@@ -1,6 +1,7 @@
 const Loan = require('../models/loan');
 const Book = require('../models/book');
 const { Op } = require('sequelize');
+const { validationResult } = require('express-validator');
 
 exports.create = async (req, res) => {
   const today = new Date();
