@@ -15,7 +15,7 @@ exports.login = async (req, res) => {
   const user = await User.findOne({ where: { email } });
   if (!user || !await bcrypt.compare(password, user.password))
     return res.status(401).json({ error: 'Credenciales inválidas' });
-  const token = jwt.sign({ id: user.id }, 'TU_SECRETO', { expiresIn: '1h' });
+  const token = jwt.sign({ id: user.id }, 'SECRETO', { expiresIn: '1h' });
   res.json({ token });
 };
 
