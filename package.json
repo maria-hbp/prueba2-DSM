@@ -1,31 +1,58 @@
 {
 
   "name": "prueba2-dsm",
+
   "version": "1.0.0",
+
   "description": "",
+
   "main": "index.js",
-  "devDependencies": {},
+
   "scripts": {
+
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
-    "dependencies": {
+
+  "dependencies": {
+
     "bcryptjs": "^3.0.2",
+
     "cors": "^2.8.5",
+
     "express": "^5.1.0",
+
     "jsonwebtoken": "^9.0.2",
+
     "sequelize": "^6.37.7",
+
     "sequelize-cli": "^6.6.3",
+
     "sqlite3": "^5.1.7"
+
   },
+
   "repository": {
+
     "type": "git",
+
     "url": "git+https://github.com/maria-hbp/prueba2-DSM.git"
+
   },
+
   "keywords": [],
+
   "author": "",
+
   "license": "ISC",
+
   "bugs": {
+
     "url": "https://github.com/maria-hbp/prueba2-DSM/issues"
+
   },
+
   "homepage": "https://github.com/maria-hbp/prueba2-DSM#readme"
+
 }
+
